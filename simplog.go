@@ -10,7 +10,8 @@
 
 // Package simplog provides a simple logging functionality. I use this kind of
 // logging a lot in my projects, so I think it's better to make it a separate
-// package.
+// package. Convinience functions to log a certain log level is provided, such
+// as [D], [I], [E], [F].
 package simplog
 
 import (
