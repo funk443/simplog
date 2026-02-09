@@ -45,35 +45,29 @@ func Printf(format string, a ...any) {
 	fmt.Fprintf(os.Stderr, format, a...)
 }
 
-// I prefixes "INFO: " before the format string.
-func I(format string, a ...any) {
-	if CurrentLevel > Info {
+// Log checks if level is smaller than [CurrentLevel], if so, the message is
+// printed with level's [LevelNames] as prefix.
+func Log(level Level, format string, a ...any) {
+	if CurrentLevel > level {
 		return
 	}
 
-	Printf("%s: ", Info.String())
+	Printf("%s: ", level.String())
 	Printf(format, a...)
 	Printf("\n")
+}
+
+// I prefixes "INFO: " before the format string.
+func I(format string, a ...any) {
+	Log(Info, format, a...)
 }
 
 // E prefixes "ERROR: " before the format string.
 func E(format string, a ...any) {
-	if CurrentLevel > Error {
-		return
-	}
-
-	Printf("%s: ", Error.String())
-	Printf(format, a...)
-	Printf("\n")
+	Log(Error, format, a...)
 }
 
 // F prefixes "FATAL: " before the format string.
 func F(format string, a ...any) {
-	if CurrentLevel > Fatal {
-		return
-	}
-
-	Printf("%s: ", Fatal.String())
-	Printf(format, a...)
-	Printf("\n")
+	Log(Fatal, format, a...)
 }
