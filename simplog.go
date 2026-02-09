@@ -14,8 +14,8 @@
 package simplog
 
 import (
-	"os"
 	"fmt"
+	"os"
 )
 
 type Level int
@@ -67,7 +67,7 @@ func E(format string, a ...any) {
 	Printf("\n")
 }
 
-// I prefixes "FATAL: " before the format string.
+// F prefixes "FATAL: " before the format string.
 func F(format string, a ...any) {
 	if CurrentLevel > Fatal {
 		return
