@@ -22,13 +22,15 @@ type Level int
 
 // These are levels for logging.
 const (
-	Info Level = iota
+	Debug = Level(iota)
+	Info
 	Error // Error is for continuable errors.
 	Fatal // Fatal is for non-continuable errors.
 )
 
 var LevelNames = map[Level]string{
-	Info: "INFO",
+	Debug: "DEBUG",
+	Info:  "INFO",
 	Error: "ERROR",
 	Fatal: "FATAL",
 }
@@ -55,6 +57,11 @@ func Log(level Level, format string, a ...any) {
 	Printf("%s: ", level.String())
 	Printf(format, a...)
 	Printf("\n")
+}
+
+// D prefixes "DEBUG: " before the format string.
+func D(format string, a ...any) {
+	Log(Debug, format, a...)
 }
 
 // I prefixes "INFO: " before the format string.
