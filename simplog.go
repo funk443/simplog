@@ -1,12 +1,12 @@
-// Copyright © 2025 CToID <funk443@icloud.com>
+// Copyright (C) 2026 by CToID <funk443@icloud.com>
+// SPDX-License-Identifier: 0BSD
 //
-// This file is part of Simplog.
+// This file is part of simplog.
 //
-// Simplog is free software. It comes without any warranty, to the
-// extent permitted by applicable law. You can redistribute it and/or
-// modify it under the terms of the Do What The Fuck You Want To Public
-// License, Version 2, as published by Sam Hocevar. See the COPYING file
-// for more details.
+// simplog is free software. It comes without any warranty, to the
+// extent permitted by applicable law. You can use, copy, modify, and/or
+// distribute it under the terms of the BSD Zero Clause License. See the
+// COPYING file for more details.
 
 // Package simplog provides a simple logging functionality. I use this kind of
 // logging a lot in my projects, so I think it's better to make it a separate
