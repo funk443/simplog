@@ -60,6 +60,12 @@ func Log(level Level, format string, a ...any) {
 	Printf("\n")
 }
 
+// Follow prints the message with prefix "| ", so it acts like a followup
+// message for the preceding error message.
+func Follow(format string, a ...any) {
+	Printf("| " + format, a...)
+}
+
 // D prefixes "DEBUG: " before the format string.
 func D(format string, a ...any) {
 	Log(Debug, format, a...)
